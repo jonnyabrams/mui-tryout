@@ -23,9 +23,21 @@ const Search = styled("div")(({ theme }) => ({
 }));
 
 const Icons = styled(Box)(({ theme }) => ({
-  display: "flex",
+  display: "none",
   gap: "20px",
   alignItems: "center",
+  [theme.breakpoints.up("sm")]: {
+    display: "flex",
+  },
+}));
+
+const UserBox = styled(Box)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  gap: "10px",
+  [theme.breakpoints.up("sm")]: {
+    display: "none",
+  },
 }));
 
 const Navbar = () => {
@@ -51,6 +63,13 @@ const Navbar = () => {
             src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg"
           />
         </Icons>
+        <UserBox>
+          <Avatar
+            sx={{ width: 30, height: 30 }}
+            src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg"
+          />
+          <Typography variant="span">Jonny</Typography>
+        </UserBox>
       </StyledToolbar>
     </AppBar>
   );
